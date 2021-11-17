@@ -6,9 +6,8 @@ app = Flask(__name__)
 def respond():
     # Retrieve the name from url parameter
     response = requests.get('https://api.github.com')
-    response.text
 
-    return jsonify(response)
+    print(response.text)
 
 @app.route('/post/', methods=['POST'])
 def post_something():
