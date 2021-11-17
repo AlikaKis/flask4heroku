@@ -5,10 +5,9 @@ app = Flask(__name__)
 @app.route('/getmsg/', methods=['GET'])
 def respond():
     # Retrieve the name from url parameter
-    name = request.args.get("name", None)
-
-    # For debugging
-    print(f"got name {name}")
+    with open('my_pics.jpg','wb') as target:
+        a = requests.post('https://diddlybop.ru/wp-content/uploads/2016/10/fotografii-dikoy-prirody_39.jpg')
+        target.write(a.content)
 
     response = {}
 
